@@ -1,0 +1,14 @@
+{
+  "name": "AWSGreengrassIoT",
+  "keywords": "AWS, greengrass, IoTcore",
+  "description": "Arduino ESP32 library to connect to AWS IoT core directly or via an AWS greengrass edge device. It uses the latest AWS IoT C-SDK as of Dicember 2019",
+  "authors":
+  [
+    {
+      "name": "Bruno Vitali",
+    }
+  ],
+  "version": "1.0.0",
+  "frameworks": "arduino",
+  "platforms": "espressif"
+}
