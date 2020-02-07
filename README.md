@@ -166,12 +166,12 @@ AWSGreenGrassIoT library comes with 5 examples:
 
 aws_servo_subscriber, gg_servo_subscriber
 -----------------------------------------
-In these examples a servo motor is connected to Analog GPIO port XX on ESP32, and simulate the remote opening and closing of a window by turning ±90 degree the motor depending on the subscribing topic "Window". An "open" will rotate the motor +90 degrees, a "close" will rotate the motor in the opposite sense, -90 degrees.
+In these examples a servo motor is connected to Analog GPIO port0 on ESP32, and simulate the remote opening and closing of a window by turning ±90 degree the motor depending on the subscribing topic "Window". An "open" will rotate the motor +90 degrees, a "close" will rotate the motor in the opposite sense, -90 degrees.
 
-Circuit diagram
+Circuit diagram:
 
 <p align="center">
-<img src="assets/circuit1.png" alt="circuit1" width="70%">
+<img src="assets/circuit1.png" alt="circuit1" width="60%">
 </p>
 
 
@@ -255,7 +255,7 @@ These two examples use an air impurity sensor SGP30 from Adafruit connected to o
 Circuit diagram
  
 <p align="center">
-<img src="assets/circuit2.png" alt="circuit2" width="70%">
+<img src="assets/circuit2.png" alt="circuit2" width="60%">
 </p>
 
  
@@ -269,6 +269,6 @@ In this examples we show how to use two sensors to the same I2C bus, BME280 (tem
 This is the circuit diagram:
 
 <p align="center">
-<img src="assets/circuit3.png" alt="circuit3" width="70%">
+<img src="assets/circuit3.png" alt="circuit3" width="60%">
 </p>
 
