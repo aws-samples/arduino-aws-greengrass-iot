@@ -107,7 +107,7 @@ Pre-requisites
     library for simple servo motors:
 
 <p align="center">
-<img src="assets/image4.png" alt="image4" width="100%">
+<img src="assets/image4.png" alt="image4" width="70%">
 </p>
 
 
@@ -119,34 +119,23 @@ Installation of AWSGreengrassIoT library
 1.  Open a browser in the code.amazon.com repository under
     <https://github.com/aws-samples/arduino-aws-greengrass-iot>
 
-2.  Copy the ssh command indicated in the picture below:
+2.  download the library in zip format as indicated in the image:
+
 
 <p align="center">
 <img src="assets/image5c.png" alt="image5c" width="100%">
 </p>
 
 
-3.  Open a terminal window and create a directory to host the cloned repository
-
-4.  clone the repository with the command pasted in step 2. and create a zip file following the following bash commands:
-
-```bash
-  mkdir somedir
-  cd somedir
-  git clone ssh://git.amazon.com/pkg/AWSGreengrassIoT
-  zip -r arduinoLib AWSGreengrassIoT/
-
-```
-
-5.  Add the Zip file as new Arduino library in Sketch->Include Library-> Add .ZIP library:
+3.  Add the Zip file as new Arduino library in Sketch->Include Library-> Add .ZIP library:
 
 <p align="center">
 <img src="assets/image5b.png" alt="image5b" width="90%">
 </p>
 
 
-6.  Check that the library is visible in Sketch -\> Include Library, as indicated
-in the screenshot below
+4.  Check that the library is visible in Sketch -\> Include Library, as indicated
+in the screenshot below:
 
 <p align="center">
 <img src="assets/image6.png" alt="image6" width="90%">
