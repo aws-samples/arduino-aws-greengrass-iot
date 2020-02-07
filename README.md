@@ -97,7 +97,7 @@ Pre-requisites
 -   in Tools-\> Board select your ESP32 module type, in my case ESP32 Dev Module
 
 <p align="center">
-<img src="assets/image4a.png" alt="image4a" width="100%">
+<img src="assets/image4a.png" alt="image4a" width="70%">
 </p>
 
 
