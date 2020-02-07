@@ -130,7 +130,7 @@ Installation of AWSGreengrassIoT library
 3.  Add the Zip file as new Arduino library in Sketch->Include Library-> Add .ZIP library:
 
 <p align="center">
-<img src="assets/image5b.png" alt="image5b" width="90%">
+<img src="assets/image5b.png" alt="image5b" width="70%">
 </p>
 
 
@@ -138,7 +138,7 @@ Installation of AWSGreengrassIoT library
 in the screenshot below:
 
 <p align="center">
-<img src="assets/image6.png" alt="image6" width="90%">
+<img src="assets/image6.png" alt="image6" width="70%">
 </p>
 
 Examples
@@ -160,7 +160,7 @@ char THING[]= "your device name here";
 AWSGreenGrassIoT library comes with 5 examples:
 
 <p align="center">
-<img src="assets/image7.png" alt="image7" width="90%">
+<img src="assets/image7.png" alt="image7" width="70%">
 </p>
 
 
