@@ -244,4 +244,4 @@ In this examples we show how to use two sensors to the same I2C bus, BME280 (tem
 
 This is the circuit diagram:
 
-  ![](assets/circuit3.png)
+    <p align="center"><img src="assets/circuit3.png" alt="circuit3" width="70%">
