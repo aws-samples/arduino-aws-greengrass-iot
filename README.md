@@ -5,11 +5,9 @@ author: Bruno Vitali
 AWS IoT Arduino library for ESP32
 =================================
 
- 
-
 This library uses AWS C-SDK to implement an Arduino class *AWSGreenGrassIoT* to
-make it easy to connect sensors/actuator to AWS IoT core, directly or by
-mean of an AWS greengrass device (i.e. Raspberry PI).
+make it easy to connect sensors/actuator to AWS IoT Core, directly or by
+mean of an AWS Greengrass device (i.e. Raspberry PI).
 
 The class AWSGreenGrassIoT exposes the following methods:
 
@@ -85,7 +83,7 @@ Pre-requisites
 
 
 
--   enter ESP32 in the search field as indicated below and install the new eps32
+-   Enter ESP32 in the search field as indicated below and install the new eps32
     board manager:
 
 <p align="center">
@@ -94,7 +92,7 @@ Pre-requisites
 
 
 
--   in Tools-\> Board select your ESP32 module type, in my case ESP32 Dev Module
+-   In Tools-\> Board select your ESP32 module type, in my case ESP32 Dev Module
 
 <p align="center">
 <img src="assets/image4a.png" alt="image4a" width="70%">
@@ -116,10 +114,10 @@ Installation of AWSGreengrassIoT library
 
  
 
-1.  Open a browser in the code.amazon.com repository under
+1.  Open a browser in the GitHub repository under
     <https://github.com/aws-samples/arduino-aws-greengrass-iot>
 
-2.  download the library in zip format as indicated in the image:
+2.  Download the library in zip format as indicated in the image:
 
 
 <p align="center">
@@ -145,10 +143,10 @@ Examples
 --------
 
 Before using the examples from the Sketch->Examples menu, please remember to:
-1. create "things" in AWS IoT Core: (https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html);
-2. generate and download thing's certificate, thing's private key and AWS service certificate (if your endpoint is different from eu-central-1);
-3. create aws_certificates.c file with the certificates/key generate in the previous step;
-4. customize the Arduino sample code by definiting the parameters for your AWS IoT core Url, your "thing"  and your WiFi network:
+1. Create "things" in AWS IoT Core: (https://docs.aws.amazon.com/iot/latest/developerguide/register-device.html);
+2. Generate and download thing's certificate, thing's private key and AWS service certificate (if your endpoint is different from eu-central-1);
+3. Create aws_certificates.c file with the certificates/key generate in the previous step;
+4. Customize the Arduino sample code by definiting the parameters for your AWS IoT Core URL, your "thing" and your WiFi network:
 
 ```C+
 char WIFI_SSID[]="SSID";
@@ -177,7 +175,7 @@ Circuit diagram:
 
 
 The only difference between the two examples is that:
-* aws_servo_subscriber connects to AWS IoT core directly using the member function "connectToIoTCore";
+* aws_servo_subscriber connects to AWS IoT Core directly using the member function "connectToIoTCore";
 
 ```C++  
 if(greengrass->connectToIoTCore() == true)
@@ -200,7 +198,7 @@ if(greengrass->connectToIoTCore() == true)
       while(1);
   }
 ```
-* gg_servo_subscriber connects via a greengrass device (it could be a raspberry pi connected to the same WiFi network or a remote EC2 instance inside AWS cloud) using the member function "connectToGG";
+* gg_servo_subscriber connects via a greengrass device (it could be a Raspberry Pi connected to the same WiFi network or a remote EC2 instance inside AWS cloud) using the member function "connectToGG";
 
 ```C++
 if(greengrass->connectToGG() == true)
@@ -252,7 +250,7 @@ aws_sgp30_publisher, gg_sgp30_publisher
 
 These two examples use an air impurity sensor SGP30 from Adafruit connected to one of the I2C port on ESP32 as indicated in the diagram below. The examples require the installation of the ADAFruit_SGP30 library as indicated in point 3 in the previous section.
 
-Circuit diagram
+Circuit diagram:
  
 <p align="center">
 <img src="assets/circuit2.png" alt="circuit2" width="60%">
