@@ -37,14 +37,18 @@ AWS_IoT_Client _client;   /* mqttClient structure cannot be a member function ot
 static void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
 	IOT_WARN("MQTT Disconnect");
 	IoT_Error_t rc = FAILURE;
+    AWSGreenGrassIoT * pGreengrass = (AWSGreenGrassIoT  *) data;
 
     Serial.println("Disconnect callback handler");
 
 	if(NULL == pClient) {
+        /* if the IoT Client is null, it is not possible to reconnect automatically
+        so we set the internal flag of the greengrass object to false */ 
+        pGreengrass->disconnect();
+ 
 		return;
 	}
 
-	IOT_UNUSED(data);
 
 	if(aws_iot_is_autoreconnect_enabled(pClient)) {
 		IOT_INFO("Auto Reconnect is enabled, Reconnecting attempt will start now");
@@ -54,6 +58,9 @@ static void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
 		if(NETWORK_RECONNECTED == rc) {
 			IOT_WARN("Manual Reconnect Successful");
 		} else {
+            /* in case the reconnection doesn't work, set the flag of the greengrass object accordingly */
+            pGreengrass->disconnect();
+          
 			IOT_WARN("Manual Reconnect Failed - %d", rc);
 		}
 	}
@@ -108,7 +115,7 @@ int AWSGreenGrassIoT::_connect( char * host,  char * rootCA) {
 	IOT_DEBUG("rootCA %s", rootCA);
 	IOT_DEBUG("clientCRT %s", _thingCA);
 	IOT_DEBUG("clientKey %s", _thingKey);
-	mqttInitParams.enableAutoReconnect = false; // We enable this later below
+	mqttInitParams.enableAutoReconnect = true;
 	mqttInitParams.pHostURL = host;
 	mqttInitParams.port = _port;
 	mqttInitParams.pRootCALocation = rootCA;
@@ -123,7 +130,7 @@ int AWSGreenGrassIoT::_connect( char * host,  char * rootCA) {
  	    mqttInitParams.isSSLHostnameVerify = false;  // in case of Greengrass, the host certificate doesn't have to be verified
 
 	mqttInitParams.disconnectHandler = disconnectCallbackHandler;
-	mqttInitParams.disconnectHandlerData = NULL;
+	mqttInitParams.disconnectHandlerData = this;
 
 	rc = aws_iot_mqtt_init(&_client, &mqttInitParams);
 	if(SUCCESS != rc) {

@@ -42,6 +42,8 @@ public:
 
   static void taskRunner(void *);
 
+  void disconnect() { _connected = false; _isGGDiscovered=false;}
+
 protected:
   int _connect( char * host,  char * rootCA);
   bool discoverGG(void);
