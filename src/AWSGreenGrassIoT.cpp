@@ -66,7 +66,7 @@ static void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicN
 	IOT_UNUSED(pClient);
 	IOT_INFO("Subscribe callback");
 	IOT_INFO("%.*s\t%.*s", topicNameLen, topicName, (int) params->payloadLen, (char *) params->payload);
-    if (!subApplCallBackHandler)
+    if (subApplCallBackHandler)
         subApplCallBackHandler(topicName,params->payloadLen,(char *)params->payload);
 }
 
@@ -303,11 +303,11 @@ void AWSGreenGrassIoT::taskRunner( void * param) {
     while(1)
     {
         //allocate some time to read messages from IoT broker
-        rc = aws_iot_mqtt_yield( &_client, 200);
+        rc = aws_iot_mqtt_yield( &_client, 400);
         if(NETWORK_ATTEMPTING_RECONNECT == rc) {
             continue;
         }
 
-        vTaskDelay(2000 / portTICK_RATE_MS);
+        vTaskDelay(1000 / portTICK_RATE_MS);
     }
 }
