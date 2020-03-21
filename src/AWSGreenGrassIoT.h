@@ -19,7 +19,7 @@ Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #include "aws_greengrass_discovery.h"
 #include "aws_iot_mqtt_client.h"
 
-typedef void (*pSubCallBackHandler_t)(char *topicName, int payloadLen, char *payLoad);
+typedef void (*pSubCallBackHandler_t)(int topicNameLen, char *topicName, int payloadLen, char *payLoad);
 
 class AWSGreenGrassIoT  {
 

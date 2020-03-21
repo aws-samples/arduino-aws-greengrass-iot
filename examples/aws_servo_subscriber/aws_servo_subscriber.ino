@@ -78,7 +78,7 @@ void windowOpen() {
     }
 }
 
-static void subscribeCallback (char *topicName, int payloadLen, char *payLoad)
+static void subscribeCallback (int topicNameLen, char *topicName, int payloadLen, char *payLoad)
 {
 
     //check if the topic is Window/close or Window/open

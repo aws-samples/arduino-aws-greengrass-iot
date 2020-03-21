@@ -74,7 +74,7 @@ static void iot_subscribe_callback_handler(AWS_IoT_Client *pClient, char *topicN
 	IOT_INFO("Subscribe callback");
 	IOT_INFO("%.*s\t%.*s", topicNameLen, topicName, (int) params->payloadLen, (char *) params->payload);
     if (subApplCallBackHandler)
-        subApplCallBackHandler(topicName,params->payloadLen,(char *)params->payload);
+        subApplCallBackHandler(topicNameLen, topicName, params->payloadLen,(char *)params->payload);
 }
 
 AWSGreenGrassIoT::AWSGreenGrassIoT(const char * AwsIoTCoreurl, // AWS IoT core URL
