@@ -6,8 +6,8 @@ AWS IoT Arduino library for ESP32
 =================================
 
 This library uses AWS C-SDK to implement an Arduino class *AWSGreenGrassIoT* to
-make it easy to connect sensors/actuator to AWS IoT Core, directly or by
-mean of an AWS Greengrass device (i.e. Raspberry PI).
+make it easy to securely connect sensors/actuator to AWS IoT Core, directly or by
+mean of an AWS Greengrass device (i.e. Raspberry PI) using X509 certificates.
 
 The class AWSGreenGrassIoT exposes the following methods:
 
