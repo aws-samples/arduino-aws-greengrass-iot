@@ -32,8 +32,8 @@ NTPClient timeClient(ntpUDP, "europe.pool.ntp.org", 3600, 60000);
 
 char WIFI_SSID[]="SSID";
 char WIFI_PASSWORD[]="PASSWORD";
-char AWSIOTURL[]="XXXXXXXXXXX.iot.region.amazonaws.com";
-char THING[]= "thingName";
+char AWSIOTURL[]="YYYYYYYYYYY.iot.region.amazonaws.com";
+char THING[]= "thingNameX";
 char TOPIC_NAME[]= "Sensors/SGP30";
 const char JSONPAYLOAD[] = "{ \"SensorID\" : \"%s\", \"timestamp\": %lu, \"TVOC\": %d, \"CO2\": %d, \"H2\": %d, \"Ethanol\": %d}";
 String sensorID;
