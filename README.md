@@ -31,7 +31,7 @@ Library dependencies
 --------------------
 
  
-The library is based on the latest (as of January 2020) Amazon iot C-SDK version 3.0.1
+The library is based on the latest (as of January 2020) Amazon IoT C-SDK version 3.0.1
 https://github.com/aws/aws-iot-device-sdk-embedded-C/releases/tag/v3.0.1. 
 Future version of the SDK can be found on https://github.com/aws/aws-iot-device-sdk-embedded-C and might require a recompilation of the AWSGreengrassIoT code.
 The library makes use of some standard Arduino libraries: WiFi,
