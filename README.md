@@ -7,7 +7,7 @@ AWS IoT Arduino library for ESP32
 
 This library uses AWS C-SDK to implement an Arduino class *AWSGreenGrassIoT* to
 make it easy to securely connect sensors/actuator to AWS IoT Core, directly or by
-mean of an AWS Greengrass device (i.e. Raspberry PI) using X509 certificates.
+means of an AWS Greengrass device (i.e. Raspberry PI) using X509 certificates.
 
 The class AWSGreenGrassIoT exposes the following methods:
 
@@ -30,7 +30,7 @@ Constructor: AWSGreenGrassIoT(const char * AwsIoTCoreurl, // AWS IoT core URL
 Library dependencies
 --------------------
 
- 
+
 The library is based on the latest (as of January 2020) Amazon IoT C-SDK version 3.0.1
 https://github.com/aws/aws-iot-device-sdk-embedded-C/releases/tag/v3.0.1. 
 Future version of the SDK can be found on https://github.com/aws/aws-iot-device-sdk-embedded-C and might require a recompilation of the AWSGreengrassIoT code.
@@ -43,12 +43,11 @@ repositories:
 -   NPTClient, to synchronize the real time clock with the nptd server and
     generate timestamps for sensor measurements (in publishing examples,
     gg_SGP30_publisher and was_SGP30_publisher);
-
 -   ADAFruit_SGP30, to use the air impurity sensor in gg_SGP30_publisher and
     was_SGP30_publisher examples;
-
 -   ESP32Servo, to control the rotation of the servo motor in gg_subscriber and
     aws_subscriber examples;
+-   DHT sensor library, to read the values from the DHT22 sensor in the gg_temp_humid_pub_sub example.
 
 
 
@@ -99,8 +98,7 @@ Pre-requisites
 </p>
 
 
-* Install Arduino Libraries “NPTClient”, “Adafruit_SGP30”, “ESP32Servo” to be
-    able to use the publishing and subscribing examples from the File menu-\>
+* Install Arduino Libraries (Tools>Manage Libraries...) “NPTClient”, “Adafruit_SGP30”, “ESP32Servo”, "DHT sensor library" to be able to use the publishing and subscribing examples from the File menu-\>
     Examples -\> AWSGreengrassIoT). The picture below shows how to add the support
     library for simple servo motors:
 
@@ -251,12 +249,12 @@ aws_sgp30_publisher, gg_sgp30_publisher
 These two examples use an air impurity sensor SGP30 from Adafruit connected to one of the I2C port on ESP32 as indicated in the diagram below. The examples require the installation of the ADAFruit_SGP30 library as indicated in point 3 in the previous section.
 
 Circuit diagram:
- 
+
 <p align="center">
 <img src="assets/circuit2.png" alt="circuit2" width="60%">
 </p>
 
- 
+
 The two examples share the same code except for the parts that connects the ESP32 Arduino to the cloud. In aws_sgp30_publisher we use "connectToIoTCore" function to publish the measurements directly to the AWS IoT core. In gg_sgp30_publisher we use "connectToGG" member function to send measurements to the greengrass edge device.
 
 aws_bme280_sgp30_publisher
