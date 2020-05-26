@@ -14,6 +14,7 @@ Copyright 2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 */
 
 //Implements publish and subscribe via the local GreenGrass device.
+//Assumes you have a local Greengrass core on the local network.
 
 #include <WiFi.h>
 
