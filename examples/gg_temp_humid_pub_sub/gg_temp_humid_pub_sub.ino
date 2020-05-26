@@ -39,9 +39,9 @@ extern const char thingKey[];
 WiFiUDP ntpUDP;
 NTPClient timeClient(ntpUDP);
 
-char WIFI_SSID[]="MALLARDCAB";                                                  //Your WiFi ssid
-char WIFI_PASSWORD[]="Ogden51st";                                               //Your WiFi Password
-char AWSIOTURL[]="a11hzuhptej14u-ats.iot.us-east-1.amazonaws.com";              //Your AWS IoT core endpoint (this can be found in under settings in the AWS IoT console)
+char WIFI_SSID[]="XXXXXXXXXX";                                                  //Your WiFi ssid
+char WIFI_PASSWORD[]="XXXXXXXXX";                                               //Your WiFi Password
+char AWSIOTURL[]="XXXXXXXXXXXXXX-ats.iot.us-east-1.amazonaws.com";              //Your AWS IoT core endpoint (this can be found in under settings in the AWS IoT console)
 char THING[]= "Temp_Humid_Sensor";                                              //This name must match the name of your device in AWS IoT
 char TOPIC_NAME[]= "Factory/3/Device/2/Status";                                 //Topic you wish the device to publish too.
 char SUB_TOPIC_NAME[]= "Factory/3/Device/2/Control";                            //Topic you wish the device to subscribe too.    
