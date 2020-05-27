@@ -6,6 +6,31 @@ author: Paul Shiner
 AWS IoT GreenGrass Discovery temp/humid example
 =================================
 
+## Description
+
+In this example I will demonstrate how to publish temperature and humidity readings from an ESP32 to a local Greengrass device and how to forward those messages onto AWS IoT core. This example will also show you how to subscribe to a topic and control the Red/Green Leds from the test console in AWS IoT core.
+
+## Hardware
+
+The parts used in this example are;
+1 x ESP32 WROOM DevkitC
+1 x DHT22/AM2302 Temp Humidity sensor
+1 x 10k resistor
+1 x LED traffic light cluster (Red/Amber/Green)
+
+Assembled;
+
+<p align="center">
+<img src="assets/breadboard.png" alt="image1" width="100%">
+</p>
+
+<p align="center">
+<img src="assets/schematic.png" alt="image1" width="100%">
+</p>
+
+
+
+
 Dependencies
 --------------------
 
