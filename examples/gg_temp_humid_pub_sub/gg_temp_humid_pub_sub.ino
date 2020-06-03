@@ -69,21 +69,21 @@ int status = WL_IDLE_STATUS;
 //bool isWindowOpen = false;
 int tick=0;
 char payload[512];
-String recievedPayload = "";
+String receivedPayload = "";
 bool ConnectedToGGC = false;
 bool SubscribedToGGC = false;
 
 static void subscribeCallback (int topicLen, char *topicName, int payloadLen, char *payLoad)
 {
     Serial.println("subscribeCallback");
-    recievedPayload = payLoad;
+    receivedPayload = payLoad;
     
     //check if it has the 
-    if (recievedPayload.indexOf("RedLED") > 0) {
+    if (receivedPayload.indexOf("RedLED") > 0) {
       //Serial.println("contains RedLED");
       unsigned int charIndex = 0;
-      charIndex = recievedPayload.indexOf("RedLED")+8;
-      char value = recievedPayload.charAt(charIndex);
+      charIndex = receivedPayload.indexOf("RedLED")+8;
+      char value = receivedPayload.charAt(charIndex);
             
       //Serial.print("RedLED at location:");
       //Serial.println(value);  
@@ -97,11 +97,11 @@ static void subscribeCallback (int topicLen, char *topicName, int payloadLen, ch
       }
     }
     
-    if (recievedPayload.indexOf("GreenLED") > 0) {
+    if (receivedPayload.indexOf("GreenLED") > 0) {
       //Serial.println("contains GreenLED");
       unsigned int charIndex = 0;
-      charIndex = recievedPayload.indexOf("GreenLED")+10; //this is the lenght of the text
-      char value = recievedPayload.charAt(charIndex);
+      charIndex = receivedPayload.indexOf("GreenLED")+10; //this is the lenght of the text
+      char value = receivedPayload.charAt(charIndex);
             
       //Serial.print("GreenLED at location:");
       //Serial.println(value);  
