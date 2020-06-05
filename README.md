@@ -40,7 +40,7 @@ WifiClientSecure, HTTPClient.
 The examples requires the installation of the following libraries from public
 repositories:
 
--   NTPClient, to synchronize the real time clock with the ntpd server and
+-   NPTClient, to synchronize the real time clock with the ntpd server and
     generate timestamps for sensor measurements (in publishing examples,
     gg_SGP30_publisher and was_SGP30_publisher);
 -   ADAFruit_SGP30, to use the air impurity sensor in gg_SGP30_publisher and
@@ -94,7 +94,7 @@ Pre-requisites
 </p>
 
 
-* Install Arduino Libraries (Tools>Manage Libraries...) “NPTClient”, “Adafruit_SGP30”, “ESP32Servo”, "DHT sensor library" to be able to use the publishing and subscribing examples from the File menu-\>
+* Install Arduino Libraries (Tools>Manage Libraries...) *  “NTPClient”, “Adafruit_SGP30”, “ESP32Servo”, "DHT sensor library" to be able to use the publishing and subscribing examples from the File menu-\>
     Examples -\> AWSGreengrassIoT). The picture below shows how to add the support
     library for simple servo motors:
 
