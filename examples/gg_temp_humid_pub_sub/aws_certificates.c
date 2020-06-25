@@ -2,7 +2,7 @@
 extern "C" {
 #endif
 
-/* AWS IoT root certificate for region us-east-1 */
+/* AWS IoT root certificate AmazonRootCA1 */
 const char aws_root_ca[] = {"-----BEGIN CERTIFICATE-----\n\
 MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF\n\
 ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6\n\
