@@ -24,7 +24,7 @@ o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU\n\
 rqXRfboQnoZsG4q5WTP468SQvvG5\n\
 -----END CERTIFICATE-----\n"};
 
-/*thing certificate:to be updated *****.cert.pem */
+/*the thingCA certificate:to be updated *****.cert.pem */
 const char thingCA[] = {"-----BEGIN CERTIFICATE-----\n\
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\
