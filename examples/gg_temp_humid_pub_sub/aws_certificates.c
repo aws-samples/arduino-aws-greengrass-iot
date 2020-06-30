@@ -2,7 +2,7 @@
 extern "C" {
 #endif
 
-/* AWS IoT root certificate for region us-east-1 */
+/* AWS IoT root certificate AmazonRootCA1 */
 const char aws_root_ca[] = {"-----BEGIN CERTIFICATE-----\n\
 MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF\n\
 ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6\n\
@@ -24,7 +24,7 @@ o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU\n\
 rqXRfboQnoZsG4q5WTP468SQvvG5\n\
 -----END CERTIFICATE-----\n"};
 
-/*thing certificate:to be updated *****.cert.pem */
+/*the thingCA certificate:to be updated *****.cert.pem */
 const char thingCA[] = {"-----BEGIN CERTIFICATE-----\n\
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\
