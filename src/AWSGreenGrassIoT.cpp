@@ -45,7 +45,7 @@ static void disconnectCallbackHandler(AWS_IoT_Client *pClient, void *data) {
         /* if the IoT Client is null, it is not possible to reconnect automatically
         so we set the internal flag of the greengrass object to false */ 
         pGreengrass->disconnect();
- 
+ 	    IOT_WARN("Reconnect cannot take place because client is NULL");
 		return;
 	}
 
@@ -141,8 +141,14 @@ int AWSGreenGrassIoT::_connect( char * host,  char * rootCA) {
 	connectParams.keepAliveIntervalInSec = 600;
 	connectParams.isCleanSession = true;
 	connectParams.MQTTVersion = MQTT_3_1_1;
+    if (connectParams.clientIDLen = (uint16_t) strlen(_thingName))
 	connectParams.pClientID = _thingName;
-	connectParams.clientIDLen = (uint16_t) strlen(_thingName);
+	else
+        {
+        connectParams.clientIDLen = 0;
+        connectParams.pClientID = NULL;
+        }
+    
 	connectParams.isWillMsgPresent = false;
 
 	IOT_INFO("Connecting...");
@@ -154,7 +160,7 @@ int AWSGreenGrassIoT::_connect( char * host,  char * rootCA) {
         _connected = true;
 
      if(rc == SUCCESS)
-        xTaskCreatePinnedToCore(&taskRunner, "AWSGreenGrassTask", stack_size, NULL, 5, NULL, 1);
+        xTaskCreate(&taskRunner, "AWSGreenGrassIoTTask", stack_size, NULL, 6, NULL);
 
 	return rc;
 }
