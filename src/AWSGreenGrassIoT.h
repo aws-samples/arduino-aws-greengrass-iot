@@ -35,7 +35,8 @@ public:
   bool connectToGG(void);
   bool connectToIoTCore(void);
 
-  bool publish(char *pubtopic,char *pubPayLoad);
+  bool publish(char *pubtopic, char *pubPayLoad);
+  bool publishBinary( char * pubtopic, char * payload, int payloadLength);
   bool subscribe(char *subTopic, pSubCallBackHandler_t pSubCallBackHandler);
 
   bool isConnected() { return _connected;}

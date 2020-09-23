@@ -189,6 +189,29 @@ bool AWSGreenGrassIoT::publish(char *pubtopic, char *pubPayLoad) {
     return ret;
  }
 
+bool AWSGreenGrassIoT::publishBinary(char *pubtopic, char *pubPayLoad, int payloadLength) {
+
+    IoT_Publish_Message_Params paramsQOS;
+    paramsQOS.qos = QOS0;
+    paramsQOS.payload = (void *) pubPayLoad;
+    paramsQOS.isRetained = 0;
+    paramsQOS.payloadLen = payloadLength;
+	IoT_Error_t rc = FAILURE;
+    bool ret = false;
+
+    if (_connected) {
+
+        rc = aws_iot_mqtt_publish(&_client, pubtopic, payloadLength, &paramsQOS);
+        if (rc != SUCCESS) {
+            IOT_WARN("Publish ack not received.\n");
+        }
+        else
+            ret = true;
+
+    }
+    return ret;
+ }
+
 bool AWSGreenGrassIoT::subscribe(char *subTopic, pSubCallBackHandler_t pSubCallBackHandler) {
 	IoT_Error_t rc = FAILURE;
     bool ret = false;
