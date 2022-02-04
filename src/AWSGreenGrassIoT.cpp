@@ -141,7 +141,7 @@ int AWSGreenGrassIoT::_connect( char * host,  char * rootCA) {
 	connectParams.keepAliveIntervalInSec = 600;
 	connectParams.isCleanSession = true;
 	connectParams.MQTTVersion = MQTT_3_1_1;
-    if (connectParams.clientIDLen = (uint16_t) strlen(_thingName))
+    if (connectParams.clientIDLen == (uint16_t) strlen(_thingName))
 	connectParams.pClientID = _thingName;
 	else
         {
